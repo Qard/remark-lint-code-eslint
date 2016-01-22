@@ -1,0 +1,36 @@
+{
+  "name": "remark-lint-code-eslint",
+  "version": "1.0.0",
+  "description": "eslint plugin for remark-lint-code",
+  "main": "index.js",
+  "author": "Stephen Belanger <admin@stephenbelanger.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/Qard/remark-lint-code-eslint#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Qard/remark-lint-code-eslint.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Qard/remark-lint-code-eslint/issues"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [
+    "remark",
+    "markdown",
+    "lint",
+    "eslint"
+  ],
+  "scripts": {
+    "test": "tap test.js"
+  },
+  "dependencies": {
+    "eslint": "^1.10.3"
+  },
+  "devDependencies": {
+    "remark": "^3.2.1",
+    "remark-lint": "^2.2.1",
+    "tap": "^5.1.1"
+  }
+}
