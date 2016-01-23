@@ -28,7 +28,9 @@ tap.test('should pass when matching', function (t) {
 })
 
 tap.test('should fail when not matching', function (t) {
-  processor.process('```js\nconsole.log("wat")\n```', function (err, file, res) {
+  processor.process('```js\nvar msg = "wat";\n console.log(msg)\n```', function (err, file, res) {
+    t.equal(file.messages[0].line, 3, 'should point to line 3')
+    t.equal(file.messages[0].column, 2, 'should point to column 2')
     t.equal(file.messages[0].reason, 'Unexpected console statement.', 'should have failed')
     t.end()
   })
