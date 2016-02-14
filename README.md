@@ -6,7 +6,7 @@ that allows linting fenced JavaScript code blocks in markdown using eslint.
 ## Install
 
 ```console
-npm install remark-include-code-eslint
+npm install remark-lint-code-eslint
 ```
 
 ## Usage
