@@ -14,7 +14,7 @@ npm install remark-include-code-eslint
 ### CLI
 
 ```console
-remark -u remark-lint="external:[\"remark-lint-code\"],\"lint-code\":{\"js\":\"remark-lint-code-eslint\"}" foo.md
+remark -u remark-lint="external:[\"remark-lint-code\"],\"lint-code\":{\"js\":\"node_modules\/remark-lint-code-eslint\"}" foo.md
 ```
 
 ### Programmatic
