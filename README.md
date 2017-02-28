@@ -45,6 +45,23 @@ remark()
   })
 ```
 
+You can also pass configuration like so:
+
+```diff
+ remark()
+   .use(lint)
+-  .use(lintCode, {js: eslint})
++  .use(lintCode, {
++    js: {
++      module: eslint,
++      options: {
++        rules: {'no-console': 2}
++      }
++    }
++  })
+   .process('```js\nvar foo = "bar"\n```', function (err, file) {
+     console.error(report(err || file));
+```
 ---
 
 ### Copyright (c) 2016 Stephen Belanger
