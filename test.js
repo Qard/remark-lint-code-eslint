@@ -5,10 +5,9 @@ var tap = require('tap')
 
 var eslint = require('./index')
 
-var processor = remark.use(lint, {
-  'final-newline': false,
-  external: [lintCode],
-  'lint-code': {
+var processor = remark()
+  .use(lint)
+  .use(lintCode, {
     js: {
       module: eslint,
       options: {
@@ -17,8 +16,7 @@ var processor = remark.use(lint, {
         }
       }
     }
-  }
-})
+  })
 
 tap.test('should pass when matching', function (t) {
   processor.process('```js\nnope\n```', function (err, file, res) {

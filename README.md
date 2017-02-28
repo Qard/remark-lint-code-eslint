@@ -6,7 +6,7 @@ that allows linting fenced JavaScript code blocks in markdown using eslint.
 ## Install
 
 ```console
-npm install remark-include-code-eslint
+npm install remark-lint-code-eslint
 ```
 
 ## Usage
@@ -14,7 +14,18 @@ npm install remark-include-code-eslint
 ### CLI
 
 ```console
-remark -u remark-lint="external:[\"remark-lint-code\"],\"lint-code\":{\"js\":\"remark-lint-code-eslint\"}" foo.md
+remark -u remark-lint -u lint-code="{\"js\":\"remark-lint-code-eslint\"}" foo.md
+```
+
+### Config file
+
+```json
+{
+  "plugins": [
+    "lint",
+    ["lint-code", {"js": "remark-lint-code-eslint"}]
+  ]
+}
 ```
 
 ### Programmatic
@@ -24,12 +35,14 @@ var remark = require('remark')
 var lint = require('remark-lint')
 var lintCode = require('remark-lint-code')
 var eslint = require('remark-lint-code-eslint')
+var report = require('vfile-reporter')
 
-remark.use(lint, {
-  'lint-code': {
-    js: eslint
-  }
-}).process('```js\nvar foo = "bar"\n```')
+remark()
+  .use(lint)
+  .use(lintCode, {js: eslint})
+  .process('```js\nvar foo = "bar"\n```', function (err, file) {
+    console.error(report(err || file));
+  })
 ```
 
 ---
