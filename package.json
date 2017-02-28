@@ -1,6 +1,6 @@
 {
   "name": "remark-lint-code-eslint",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "eslint plugin for remark-lint-code",
   "main": "index.js",
   "author": "Stephen Belanger <admin@stephenbelanger.com>",
