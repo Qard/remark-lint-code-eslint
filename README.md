@@ -1,5 +1,7 @@
 # remark-lint-code-eslint
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Qard/remark-lint-code-eslint.svg)](https://greenkeeper.io/)
+
 This a plugin for [remark-lint-code](https://github.com/qard/remark-lint-code)
 that allows linting fenced JavaScript code blocks in markdown using eslint.
 
